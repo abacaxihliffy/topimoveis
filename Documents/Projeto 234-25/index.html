@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#720502" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <title>Green Ville Home Club • Top Imóveis Itapema</title>
+  <meta name="description" content="Green Ville Home Club por Pasqualotto. 3 dorm (1 suíte), 103 m², lazer completo 4.050 m². De R$ 1.350.000 por R$ 799.000. Incorporação 59646. Entrega 2029." />
+  <style>
+    /*
+      Este documento HTML implementa um anúncio premium para o empreendimento
+      Green Ville Home Club. O layout é responsivo e procura equilibrar
+      sofisticação com clareza. As cores base seguem a identidade da marca
+      Top Imóveis (vermelho escuro), enquanto elementos de vidro e sombras
+      dão um aspecto moderno sem exageros. Ícones chamativos foram
+      removidos em favor de tipografia forte e pequenos acentos de cor.
+    */
+    :root{
+      --brand:#720502;      /* Vermelho primário da marca */
+      --brand-dark:#4e0201; /* Vermelho escuro de apoio */
+      --ink:#121316;        /* Texto principal */
+      --muted:#6b7280;      /* Texto secundário */
+      --paper:#ffffff;      /* Cartões e planos brancos */
+      --bg:#0f0f11;         /* Fundo escuro do cabeçalho */
+      --radius:22px;        /* Raio padrão de bordas */
+      --shadow-lg:0 22px 48px rgba(0,0,0,.18);
+      --shadow-md:0 14px 30px rgba(0,0,0,.12);
+      --shadow-sm:0 6px 16px rgba(0,0,0,.10);
+    }
+    *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
+    @media (prefers-reduced-motion: reduce){
+      html:focus-within{scroll-behavior:auto}
+      *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
+    }
+    html,body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      color:var(--ink);
+      background:#FAFAFB;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:clamp(16px,2vw,28px)}
+
+    /* Componentes utilitários */
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;font-weight:800}
+    .pill-soft{background:#f7e9ea;color:var(--brand)}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f4e7e7;color:var(--brand);font-weight:800;letter-spacing:.2px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;
+         padding:16px 22px;font-weight:900;letter-spacing:.2px;cursor:pointer;transition:transform .15s ease, box-shadow .2s ease}
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:0 16px 34px rgba(114,5,2,.28)}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-outline{background:#fff;color:var(--brand);border:2px solid var(--brand);box-shadow:var(--shadow-sm)}
+    .btn-ghost{background:transparent;color:#fff;opacity:.95;border:2px solid rgba(255,255,255,.2)}
+    .btn-ghost:hover{opacity:1}
+    .btn-min{padding:12px 16px;border-radius:14px;font-weight:800}
+
+    /* Cabeçalho fixo */
+    header.sticky{
+      position:sticky;top:0;z-index:60;
+      background:rgba(255,255,255,.85);
+      border-bottom:1px solid #eee;
+      backdrop-filter:saturate(170%) blur(10px);
+    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:46px;width:auto;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    nav.actions{display:flex;gap:10px;flex-wrap:wrap}
+    .brand img.logo-red {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(3000%) hue-rotate(340deg) brightness(90%) contrast(110%);
+}
+
+    /* Secção hero principal */
+    .hero{
+      background: radial-gradient(1200px 600px at 60% -10%, rgba(114,5,2,.35), transparent),
+                  linear-gradient(180deg, #1a1a1c 0%, #0f0f11 100%);
+      color:#fff;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:stretch}
+    .cover{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);isolation:isolate}
+    .cover img.hero-img{width:100%;height:100%;object-fit:cover;transform:scale(1.005)}
+    .cover .overlay{
+      position:absolute;inset:0;
+      background: radial-gradient(800px 300px at 65% -40%, rgba(255,255,255,.18), transparent 60%),
+                  linear-gradient(180deg,rgba(0,0,0,.08) 0%, rgba(0,0,0,.55) 100%);
+    }
+    .cover .title{position:absolute;left:20px;bottom:20px}
+    .cover .title h1{margin:0;font-size:clamp(22px,3.6vw,42px);letter-spacing:.3px}
+    .cover .subtitle{margin:.25rem 0 0;opacity:.9;font-weight:500;letter-spacing:.2px}
+
+    .panel{
+      background:rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:var(--radius);
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      box-shadow:var(--shadow-lg);
+    }
+    .price{display:flex;flex-direction:column;gap:6px}
+    .price .old{color:#ffd4d0;text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:#ffbab3;font-weight:900;letter-spacing:.2px}
+    .price .now{color:#fff;font-size:clamp(30px,4.6vw,46px);font-weight:900}
+    .features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .feature{
+      background:#fff;
+      border-radius:18px;
+      padding:14px 16px;
+      font-weight:900;
+      color:#111;
+      box-shadow:var(--shadow-sm);
+      border-left:4px solid var(--brand); /* destaque sem ícone */
+    }
+    .muted{color:#cfcfcf;font-size:.88rem}
+    .stock{width:100%;height:12px;background:#f1d6d7;border-radius:999px;overflow:hidden}
+    .stock>span{display:block;height:100%;background:#d33a2b;width:100%}
+
+    /* Seções genéricas */
+    /* Ajustes de espaçamento: reduza a altura das seções e o espaçamento inferior dos títulos */
+    .section{padding:40px 0}
+    .sec-title{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px}
+    .sec-title h2{margin:0;font-size:clamp(20px,2.8vw,30px)}
+    .lead{color:#444;max-width:780px;line-height:1.5;letter-spacing:.2px}
+
+    /* Vídeos */
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);position:relative;transition:box-shadow .2s ease}
+    .card:hover{box-shadow:0 18px 46px rgba(0,0,0,.16)}
+    .ratio{position:relative;width:100%;padding-top:56.25%}
+    .ratio>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .tap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+         background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.48));
+         color:#fff;font-weight:900;letter-spacing:.3px;cursor:pointer;
+         transition:opacity .3s ease}
+    .tap.hide{opacity:0;pointer-events:none}
+
+    /* Diferenciais */
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card-body{padding:22px;display:flex;flex-direction:column;gap:10px}
+    .card-body h3{margin:0;font-size:1.1rem;font-weight:900;color:var(--brand)}
+    .card-body p{margin:0;color:#444;font-weight:500;line-height:1.5}
+    .divider{width:40px;height:4px;background:var(--brand);border-radius:2px;margin-top:6px;margin-bottom:8px}
+
+    /* Tipologia */
+    .type{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--paper);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow-md);font-weight:900}
+    .type .chip{margin-left:auto}
+
+    /* Localização & Detalhes */
+    .info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .info-card{
+      background:var(--paper);
+      padding:20px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-md);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .info-card strong{color:var(--brand);font-weight:900;font-size:1rem}
+    .info-card span{color:#444;font-weight:500;line-height:1.4}
+
+    /* CTA Final */
+    .cta{
+      display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+      background:linear-gradient(90deg,#720502,#4e0201);
+      color:#fff;
+      padding:20px;
+      border-radius:24px;
+      box-shadow:var(--shadow-md);
+    }
+    .cta .btn-ghost{border:2px solid rgba(255,255,255,.22);box-shadow:none;padding:14px 18px;font-weight:900}
+
+    /* Botão WhatsApp flutuante */
+    .float{position:fixed;right:16px;bottom:16px;z-index:70;box-shadow:var(--shadow-md)}
+    .float .btn{box-shadow:0 16px 34px rgba(37,211,102,.35);background:#25D366;color:#fff}
+
+    /* Revelar ao rolar */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.on{opacity:1;transform:none}
+
+    /* Responsividade */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .info-grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 560px){
+      .features{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="sticky">
+    <div class="container topbar">
+      <div class="brand">
+        <img src="assets/logo-top-imoveis.png" alt="Top Imóveis" class="logo-red" />
+        <strong>Top Imóveis • Itapema</strong>
+      </div>
+      <nav class="actions">
+        <!-- Botão simples de Instagram -->
+        <a class="btn-outline btn-min" href="https://instagram.com/topimoveisitapema" target="_blank" rel="noopener">Instagram</a>
+        <!-- CTA principal WhatsApp -->
+        <a class="btn btn-primary" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Fale no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero com destaque -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <!-- Imagem de capa -->
+      <figure class="cover reveal">
+        <img src="assets/hero.png" alt="Green Ville Home Club - Fachada" loading="eager" class="hero-img"/>
+        <div class="overlay"></div>
+        <figcaption class="title">
+          <h1>IMPERDÍVEL — GREEN VILLE</h1>
+          <div class="subtitle">Itapema • SC</div>
+        </figcaption>
+      </figure>
+
+      <!-- Painel com preços e CTA -->
+      <aside class="panel reveal" style="transition-delay:.05s">
+        <span class="chip">Últimas 3 unidades</span>
+        <div class="price">
+          <span class="old">De R$ 1.350.000</span>
+          <span class="now">Por R$ 799.000</span>
+        </div>
+
+        <div class="features">
+          <div class="feature">103 m² privativos</div>
+          <div class="feature">3 dormitórios • 1 suíte</div>
+          <div class="feature">Lazer 4.050 m²</div>
+        </div>
+
+        <div class="stock" title="Unidades disponíveis"><span id="stockBar" style="width:100%"></span></div>
+        <small class="muted" id="stockText">Restam: 3 unidades</small>
+
+        <a class="btn btn-primary" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Quero falar agora</a>
+        <small class="muted">Incorporação imobiliária nº 59646 • Entrega prevista: 2029</small>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Seção de vídeos -->
+  <section class="section" id="videos">
+    <div class="container">
+      <div class="sec-title">
+        <h2>Vídeos do Empreendimento</h2>
+        <p class="lead">Assista à visão completa do projeto e à maquete física — toque para reproduzir.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card reveal">
+          <div class="ratio">
+            <video id="videoProjeto" preload="metadata" playsinline>
+              <source src="assets/video-projeto.mp4" type="video/mp4" />
+            </video>
+            <button class="tap" data-target="videoProjeto">▶︎ Projeto completo (1:18)</button>
+          </div>
+        </article>
+        <article class="card reveal" style="transition-delay:.06s">
+          <div class="ratio">
+            <video id="videoMaquete" preload="metadata" playsinline>
+              <source src="assets/video-maquete.mp4" type="video/mp4" />
+            </video>
+            <button class="tap" data-target="videoMaquete">▶︎ Maquete (~20s)</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de diferenciais -->
+  <section class="section" id="diferenciais">
+    <div class="container">
+      <div class="sec-title"><h2>Diferenciais do Green Ville</h2></div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-body">
+            <h3>Condomínio</h3>
+            <div class="divider"></div>
+            <p>3 torres • 31 pavimentos • 4 aptos/andar • 4 elevadores/torre • Portaria 24h • Entrada de banhistas e serviços</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:.05s">
+          <div class="card-body">
+            <h3>Lazer</h3>
+            <div class="divider"></div>
+            <p>4 salões de festas • 3 bistrôs • Espaço gourmet • Brinquedoteca • Playground • 2 salas de jogos • Academia • Espaço pet • Quadra poliesportiva</p>
+          </div>
+        </div>
+        <div class="card reveal" style="transition-delay:.08s">
+          <div class="card-body">
+            <h3>Bem‑estar & Piscinas</h3>
+            <div class="divider"></div>
+            <p>Sauna seca e úmida • Sala de massagem • Piscinas internas e externas (adulto, infantil e com raia) • Bar molhado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tipologia -->
+  <section class="section" id="tipologia">
+    <div class="container">
+      <div class="sec-title"><h2>Tipologia</h2></div>
+      <div class="type reveal">
+        <span class="pill pill-soft">Tipo 1</span>
+        1 suíte + 2 dormitórios • <strong style="margin:0 6px">102,56 m²</strong> privativos
+        <span class="chip">Entrega 2029</span>
+      </div>
+      <small style="display:block;margin-top:8px;color:var(--muted)">Plantas e mobiliário meramente ilustrativos. Sujeito a alteração pela construtora.</small>
+    </div>
+  </section>
+
+  <!-- Localização e detalhes -->
+  <section class="section" id="local">
+    <div class="container">
+      <div class="sec-title"><h2>Localização & Detalhes</h2></div>
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <strong>Endereço</strong>
+          <span>Entre as ruas 268 e 2720, Itapema • SC</span>
+        </div>
+        <div class="info-card reveal" style="transition-delay:.06s">
+          <strong>Detalhes</strong>
+          <span>Construtora Pasqualotto • Incorporação nº 59646 • Área de lazer mobiliada e decorada • Segurança 24h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="section" style="padding-top:0">
+    <div class="container cta reveal">
+      <div style="font-weight:900;font-size:clamp(18px,2.6vw,24px)">Garanta sua unidade com condições especiais</div>
+      <a class="btn-ghost" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Fale no WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Botão WhatsApp fixo -->
+  <div class="float">
+    <a class="btn" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between">
+      <div>© <span id="year"></span> Top Imóveis Itapema • Green Ville Home Club</div>
+      <div>Imagens meramente ilustrativas. Consulte disponibilidade e condições.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Atualiza o ano do rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Atualiza a barra de estoque (ajuste manual de unidades disponíveis)
+    (function(){
+      const bar = document.getElementById('stockBar');
+      const text = document.getElementById('stockText');
+      if(bar && text){
+        const total = 3;
+        const disponiveis = 3; // Ajuste conforme necessário
+        const pct = Math.max(0, Math.min(100, Math.round((disponiveis / total) * 100)));
+        bar.style.width = pct + '%';
+        text.textContent = 'Restam: ' + disponiveis + ' unidades';
+      }
+    })();
+
+    // Reproduz vídeos ao tocar
+    document.querySelectorAll('.tap').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-target');
+        const vid = document.getElementById(id);
+        if (vid) {
+          vid.controls = true;
+          vid.muted = true;
+          vid.play();
+          btn.classList.add('hide');
+        }
+      });
+    });
+    document.querySelectorAll('video').forEach(v => {
+      v.addEventListener('click', () => {
+        v.controls = true;
+        v.muted = true;
+        v.play();
+        const overlay = v.parentElement.querySelector('.tap');
+        if (overlay) overlay.classList.add('hide');
+      });
+    });
+
+    // Animações de aparição conforme scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('on');
+      });
+    }, {threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
