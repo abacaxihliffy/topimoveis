@@ -8,22 +8,14 @@
   <title>Green Ville Home Club • Top Imóveis Itapema</title>
   <meta name="description" content="Green Ville Home Club por Pasqualotto. 3 dorm (1 suíte), 103 m², lazer completo 4.050 m². De R$ 1.350.000 por R$ 799.000. Incorporação 59646. Entrega 2029." />
   <style>
-    /*
-      Este documento HTML implementa um anúncio premium para o empreendimento
-      Green Ville Home Club. O layout é responsivo e procura equilibrar
-      sofisticação com clareza. As cores base seguem a identidade da marca
-      Top Imóveis (vermelho escuro), enquanto elementos de vidro e sombras
-      dão um aspecto moderno sem exageros. Ícones chamativos foram
-      removidos em favor de tipografia forte e pequenos acentos de cor.
-    */
     :root{
-      --brand:#720502;      /* Vermelho primário da marca */
-      --brand-dark:#4e0201; /* Vermelho escuro de apoio */
-      --ink:#121316;        /* Texto principal */
-      --muted:#6b7280;      /* Texto secundário */
-      --paper:#ffffff;      /* Cartões e planos brancos */
-      --bg:#0f0f11;         /* Fundo escuro do cabeçalho */
-      --radius:22px;        /* Raio padrão de bordas */
+      --brand:#720502;
+      --brand-dark:#4e0201;
+      --ink:#121316;
+      --muted:#6b7280;
+      --paper:#ffffff;
+      --bg:#0f0f11;
+      --radius:22px;
       --shadow-lg:0 22px 48px rgba(0,0,0,.18);
       --shadow-md:0 14px 30px rgba(0,0,0,.12);
       --shadow-sm:0 6px 16px rgba(0,0,0,.10);
@@ -44,7 +36,7 @@
     img{max-width:100%;height:auto;display:block}
     .container{max-width:1200px;margin:0 auto;padding:clamp(16px,2vw,28px)}
 
-    /* Componentes utilitários */
+    /* Utilitários */
     .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;font-weight:800}
     .pill-soft{background:#f7e9ea;color:var(--brand)}
     .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f4e7e7;color:var(--brand);font-weight:800;letter-spacing:.2px}
@@ -58,68 +50,34 @@
     .btn-min{padding:12px 16px;border-radius:14px;font-weight:800}
 
     /* Cabeçalho fixo */
-    header.sticky{
-      position:sticky;top:0;z-index:60;
-      background:rgba(255,255,255,.85);
-      border-bottom:1px solid #eee;
-      backdrop-filter:saturate(170%) blur(10px);
-    }
+    header.sticky{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.85);border-bottom:1px solid #eee;backdrop-filter:saturate(170%) blur(10px)}
     .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{height:46px;width:auto;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .brand img.logo-red{filter:brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(3000%) hue-rotate(340deg) brightness(90%) contrast(110%)}
     nav.actions{display:flex;gap:10px;flex-wrap:wrap}
-    .brand img.logo-red {
-  filter: brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(3000%) hue-rotate(340deg) brightness(90%) contrast(110%);
-}
 
-    /* Secção hero principal */
-    .hero{
-      background: radial-gradient(1200px 600px at 60% -10%, rgba(114,5,2,.35), transparent),
-                  linear-gradient(180deg, #1a1a1c 0%, #0f0f11 100%);
-      color:#fff;
-    }
+    /* Hero */
+    .hero{background: radial-gradient(1200px 600px at 60% -10%, rgba(114,5,2,.35), transparent),linear-gradient(180deg, #1a1a1c 0%, #0f0f11 100%);color:#fff}
     .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:stretch}
     .cover{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);isolation:isolate}
     .cover img.hero-img{width:100%;height:100%;object-fit:cover;transform:scale(1.005)}
-    .cover .overlay{
-      position:absolute;inset:0;
-      background: radial-gradient(800px 300px at 65% -40%, rgba(255,255,255,.18), transparent 60%),
-                  linear-gradient(180deg,rgba(0,0,0,.08) 0%, rgba(0,0,0,.55) 100%);
-    }
+    .cover .overlay{position:absolute;inset:0;background: radial-gradient(800px 300px at 65% -40%, rgba(255,255,255,.18), transparent 60%),linear-gradient(180deg,rgba(0,0,0,.08) 0%, rgba(0,0,0,.55) 100%)}
     .cover .title{position:absolute;left:20px;bottom:20px}
     .cover .title h1{margin:0;font-size:clamp(22px,3.6vw,42px);letter-spacing:.3px}
     .cover .subtitle{margin:.25rem 0 0;opacity:.9;font-weight:500;letter-spacing:.2px}
 
-    .panel{
-      background:rgba(255,255,255,.08);
-      backdrop-filter: blur(12px);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:var(--radius);
-      padding:22px;
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      box-shadow:var(--shadow-lg);
-    }
+    .panel{background:rgba(255,255,255,.08);backdrop-filter: blur(12px);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow-lg)}
     .price{display:flex;flex-direction:column;gap:6px}
     .price .old{color:#ffd4d0;text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:#ffbab3;font-weight:900;letter-spacing:.2px}
     .price .now{color:#fff;font-size:clamp(30px,4.6vw,46px);font-weight:900}
     .features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .feature{
-      background:#fff;
-      border-radius:18px;
-      padding:14px 16px;
-      font-weight:900;
-      color:#111;
-      box-shadow:var(--shadow-sm);
-      border-left:4px solid var(--brand); /* destaque sem ícone */
-    }
+    .feature{background:#fff;border-radius:18px;padding:14px 16px;font-weight:900;color:#111;box-shadow:var(--shadow-sm);border-left:4px solid var(--brand)}
     .muted{color:#cfcfcf;font-size:.88rem}
     .stock{width:100%;height:12px;background:#f1d6d7;border-radius:999px;overflow:hidden}
     .stock>span{display:block;height:100%;background:#d33a2b;width:100%}
 
     /* Seções genéricas */
-    /* Ajustes de espaçamento: reduza a altura das seções e o espaçamento inferior dos títulos */
     .section{padding:40px 0}
     .sec-title{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px}
     .sec-title h2{margin:0;font-size:clamp(20px,2.8vw,30px)}
@@ -131,10 +89,7 @@
     .card:hover{box-shadow:0 18px 46px rgba(0,0,0,.16)}
     .ratio{position:relative;width:100%;padding-top:56.25%}
     .ratio>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .tap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-         background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.48));
-         color:#fff;font-weight:900;letter-spacing:.3px;cursor:pointer;
-         transition:opacity .3s ease}
+    .tap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.48));color:#fff;font-weight:900;letter-spacing:.3px;cursor:pointer;transition:opacity .3s ease}
     .tap.hide{opacity:0;pointer-events:none}
 
     /* Diferenciais */
@@ -150,30 +105,15 @@
 
     /* Localização & Detalhes */
     .info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-    .info-card{
-      background:var(--paper);
-      padding:20px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-md);
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
+    .info-card{background:var(--paper);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow-md);display:flex;flex-direction:column;gap:8px}
     .info-card strong{color:var(--brand);font-weight:900;font-size:1rem}
     .info-card span{color:#444;font-weight:500;line-height:1.4}
 
     /* CTA Final */
-    .cta{
-      display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;
-      background:linear-gradient(90deg,#720502,#4e0201);
-      color:#fff;
-      padding:20px;
-      border-radius:24px;
-      box-shadow:var(--shadow-md);
-    }
+    .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#720502,#4e0201);color:#fff;padding:20px;border-radius:24px;box-shadow:var(--shadow-md)}
     .cta .btn-ghost{border:2px solid rgba(255,255,255,.22);box-shadow:none;padding:14px 18px;font-weight:900}
 
-    /* Botão WhatsApp flutuante */
+    /* Botão WhatsApp flutuante (desktop) */
     .float{position:fixed;right:16px;bottom:16px;z-index:70;box-shadow:var(--shadow-md)}
     .float .btn{box-shadow:0 16px 34px rgba(37,211,102,.35);background:#25D366;color:#fff}
 
@@ -181,7 +121,7 @@
     .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
     .reveal.on{opacity:1;transform:none}
 
-    /* Responsividade */
+    /* Responsividade geral */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns:1fr}
       .features{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -189,9 +129,33 @@
       .grid-3{grid-template-columns:1fr 1fr}
       .info-grid{grid-template-columns:1fr}
     }
+
+    /* ======= OTIMIZAÇÕES PARA CELULAR ======= */
     @media (max-width: 560px){
-      .features{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
+      /* cabeçalho compacto e sem botões gigantes */
+      .topbar{flex-direction:column;align-items:stretch;gap:10px}
+      .brand img{height:36px}
+      nav.actions{display:none} /* escondemos botões grandes do topo no mobile */
+
+      /* tipografia e cartões mais compactos */
+      .panel{padding:16px}
+      .btn{padding:12px 16px;font-size:.95rem}
+      .btn-min{padding:10px 12px;border-radius:12px;font-size:.9rem}
+      .feature{padding:12px 14px;font-size:.98rem}
+      .cta{padding:16px;gap:10px;border-radius:18px}
+
+      /* esconde o botão flutuante para não conflitar com a barra móvel */
+      .float{display:none}
+
+      /* dá espaço inferior para a barra fixa não cobrir conteúdo */
+      body{padding-bottom:84px}
+
+      /* barra móvel fixa com IG + WhatsApp lado a lado */
+      .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:80;background:rgba(255,255,255,.96);border-top:1px solid #eee;backdrop-filter:saturate(160%) blur(8px);padding:12px calc(12px + env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left))}
+      .mobile-cta .row{display:flex;gap:10px}
+      .mobile-cta a{flex:1;padding:12px 0;border-radius:14px;font-weight:900;text-align:center}
+      .mobile-cta a.ig{border:2px solid var(--brand);background:#fff;color:var(--brand)}
+      .mobile-cta a.wa{background:#25D366;color:#fff;box-shadow:0 10px 22px rgba(37,211,102,.30)}
     }
   </style>
 </head>
@@ -204,18 +168,15 @@
         <strong>Top Imóveis • Itapema</strong>
       </div>
       <nav class="actions">
-        <!-- Botão simples de Instagram -->
         <a class="btn-outline btn-min" href="https://instagram.com/topimoveisitapema" target="_blank" rel="noopener">Instagram</a>
-        <!-- CTA principal WhatsApp -->
-        <a class="btn btn-primary" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Fale no WhatsApp</a>
+        <a class="btn btn-primary" href="https://wa.me/554796998800?text=Ol%C3%A1%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Fale no WhatsApp</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero com destaque -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-grid">
-      <!-- Imagem de capa -->
       <figure class="cover reveal">
         <img src="assets/hero.png" alt="Green Ville Home Club - Fachada" loading="eager" class="hero-img"/>
         <div class="overlay"></div>
@@ -225,7 +186,6 @@
         </figcaption>
       </figure>
 
-      <!-- Painel com preços e CTA -->
       <aside class="panel reveal" style="transition-delay:.05s">
         <span class="chip">Últimas 3 unidades</span>
         <div class="price">
@@ -242,13 +202,13 @@
         <div class="stock" title="Unidades disponíveis"><span id="stockBar" style="width:100%"></span></div>
         <small class="muted" id="stockText">Restam: 3 unidades</small>
 
-        <a class="btn btn-primary" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Quero falar agora</a>
+        <a class="btn btn-primary" href="https://wa.me/554796998800?text=Ol%C3%A1%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Quero falar agora</a>
         <small class="muted">Incorporação imobiliária nº 59646 • Entrega prevista: 2029</small>
       </aside>
     </div>
   </section>
 
-  <!-- Seção de vídeos -->
+  <!-- Vídeos -->
   <section class="section" id="videos">
     <div class="container">
       <div class="sec-title">
@@ -276,7 +236,7 @@
     </div>
   </section>
 
-  <!-- Seção de diferenciais -->
+  <!-- Diferenciais -->
   <section class="section" id="diferenciais">
     <div class="container">
       <div class="sec-title"><h2>Diferenciais do Green Ville</h2></div>
@@ -340,13 +300,23 @@
   <section class="section" style="padding-top:0">
     <div class="container cta reveal">
       <div style="font-weight:900;font-size:clamp(18px,2.6vw,24px)">Garanta sua unidade com condições especiais</div>
-      <a class="btn-ghost" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Fale no WhatsApp</a>
+      <a class="btn-ghost" href="https://wa.me/554796998800?text=Ol%C3%A1%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">Fale no WhatsApp</a>
     </div>
   </section>
 
-  <!-- Botão WhatsApp fixo -->
+  <!-- Botão WhatsApp fixo (desktop) -->
   <div class="float">
-    <a class="btn" href="https://wa.me/554796998800?text=Olá%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn" href="https://wa.me/554796998800?text=Ol%C3%A1%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <!-- Barra móvel fixa (só aparece no celular) -->
+  <div class="mobile-cta" aria-hidden="true">
+    <div class="container" style="padding:0">
+      <div class="row">
+        <a class="ig" href="https://instagram.com/topimoveisitapema" target="_blank" rel="noopener">Instagram</a>
+        <a class="wa" href="https://wa.me/554796998800?text=Ol%C3%A1%20tenho%20interesse%20no%20Green%20Ville%20Home%20Club!" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
   </div>
 
   <footer>
@@ -360,7 +330,7 @@
     // Atualiza o ano do rodapé
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Atualiza a barra de estoque (ajuste manual de unidades disponíveis)
+    // Atualiza a barra de estoque
     (function(){
       const bar = document.getElementById('stockBar');
       const text = document.getElementById('stockText');
@@ -398,9 +368,7 @@
 
     // Animações de aparição conforme scroll
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('on');
-      });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
     }, {threshold:.14});
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
